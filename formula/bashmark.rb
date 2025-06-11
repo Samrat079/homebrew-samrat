@@ -1,4 +1,4 @@
-class Mycli < Formula
+class Bashmark < Formula
   desc "Bashmark is a cli based benchmarking utility, it can perform matrix math on cpu and gpu to test graphical performance."
   homepage "https://github.com/Samrat079/Bashmark"
   url "https://github.com/Samrat079/Bashmark/blob/main/build/bashmark-1.0.0.tar.gz"
