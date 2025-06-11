@@ -9,7 +9,7 @@ class Bashmark < Formula
 
   def install
       bin.install "bin/bashmark"
-      pkgshare.install Dir["share/bashmark/**/*"]
+      pkgshare.install "share/bashmark"
   end
 
   test do
