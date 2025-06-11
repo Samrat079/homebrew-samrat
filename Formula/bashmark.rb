@@ -8,7 +8,7 @@ class Bashmark < Formula
   depends_on "opencl-headers" # or whatever dependency is appropriate for OpenCL
 
   def install
-    bin.install "build/bashmark"
+    bin.install Dir["*/bin/bashmark"].first
   end
 
   test do
