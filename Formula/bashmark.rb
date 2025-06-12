@@ -16,17 +16,16 @@ class Bashmark < Formula
   test do
     system "#{bin}/bashmark", "--version"
   end
+
+  def caveats
+    <<~EOS
+      To use Bashmark's OpenCL GPU features, please ensure the appropriate GPU drivers and OpenCL runtimes are installed:
+
+        - Intel: intel-opencl
+        - AMD: rocm-opencl-runtime
+        - NVIDIA: nvidia-opencl-icd 
+
+     Check opencl compatablity with clinfo, without the above mentioned runtimes bashmark can't identify the GPU and will print "No GPU devices found.     GPU benchmark cannot run."
+    EOS
+  end
 end
-
-def caveats
-  <<~EOS
-    To use Bashmark's OpenCL GPU features, please ensure the appropriate GPU drivers and OpenCL runtimes are installed:
-
-      - Intel: intel-opencl
-      - AMD: rocm-opencl-runtime
-      - NVIDIA: nvidia-opencl-icd 
-
-    Check opencl compatablity with clinfo, without the above mentioned runtimes bashmark can't identify the GPU and will print "No GPU devices found.     GPU benchmark cannot run."
-  EOS
-end
-
