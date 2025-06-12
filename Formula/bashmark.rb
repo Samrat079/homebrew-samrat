@@ -6,7 +6,7 @@ class Bashmark < Formula
   version "1.0.2"
   license "MIT"
 
-  depends_on "ocl-icd"
+  depends_on "opencl-icd-loader"
 
   def install
     bin.install "bin/bashmark"
