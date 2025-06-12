@@ -6,7 +6,7 @@ class Bashmark < Formula
   version "1.0.2"
   license "MIT"
 
-  depends_on "opencl-headers" # or whatever dependency is appropriate for OpenCL
+  depends_on "ocl-icd"
 
   def install
     bin.install "bin/bashmark"
@@ -16,5 +16,17 @@ class Bashmark < Formula
   test do
     system "#{bin}/bashmark", "--version"
   end
+end
+
+def caveats
+  <<~EOS
+    To use Bashmark's OpenCL GPU features, please ensure the appropriate GPU drivers and OpenCL runtimes are installed:
+
+      - Intel: intel-opencl
+      - AMD: rocm-opencl-runtime
+      - NVIDIA: nvidia-opencl-icd 
+
+    Check opencl compatablity with clinfo, without the above mentioned runtimes bashmark can't identify the GPU and will print "No GPU devices found.     GPU benchmark cannot run."
+  EOS
 end
 
