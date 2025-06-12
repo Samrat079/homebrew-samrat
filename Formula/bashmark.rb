@@ -9,7 +9,7 @@ class Bashmark < Formula
 
   def install
       bin.install "bin/bashmark"
-      (bin/"assets").install Dir["assets/*"]
+      (share/"bashmark/assets").install Dir["assets/*"]
   end
 
   test do
